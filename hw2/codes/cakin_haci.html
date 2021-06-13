@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1 style="font-size: 2.6rem">CS315</h1>
+    <h2 style="font-size: 2.1rem">Hw2</h2>
+    <h3 style="font-size: 1.7rem">Iteration based Data structures</h3>
+
+    <p id="results"></p>
+    <p id="subheading"></p>
+    <script>
+      // 1. Iteration statements provided
+      // Iterations are provided in js by using while, for, do-while, for/in, for/of, forEach
+      console.log("1. Iteration statements provided");
+      console.log("while -----");
+      number1 = 0;
+      var bool1 = true;
+      while (bool1) {
+        if (number1 == 4) {
+          bool1 = false;
+          console.log("number1 reached to 4");
+          break;
+        }
+        console.log("number1 = " + number1);
+        number1++;
+      }
+      console.log("for -----");
+      for (i = 0; i < 5; i++) {
+        if (i == 4) {
+          console.log("i reached to 4");
+        } else {
+          console.log("i = " + i);
+        }
+      }
+
+      console.log("do while -----");
+      bool1 = true;
+      number2 = 0;
+      do {
+        if (number2 == 4) {
+          console.log("number2 reached to 4");
+          bool1 = false;
+          break;
+        }
+        console.log("number2 = " + number2);
+        number2++;
+      } while (bool1);
+
+      console.log("for/of -----");
+      numArray = [0, 1, 2, 3, 4];
+      for (temp of numArray) {
+        console.log("temp = " + temp);
+      }
+      console.log("for/in -----");
+      var dates = { birhday: 24, bilkent: 1984, FB: 1907 };
+      for (temp in dates) {
+        console.log("temp = ", temp);
+      }
+      console.log("forEach -----");
+      var languages = ["tr", "en", "fr"];
+      languages.forEach((item, index, arr) => console.log(item));
+
+      // 2. Data structures suitable for iteration
+      // Built in data structures are in js array,set,object
+      console.log("2. Data structures suitable for iteration");
+      console.log("array -----");
+
+      numArray2 = [0, 1, 2, 3, 4];
+      for (var temp of numArray2) {
+        console.log("temp = " + temp);
+      }
+
+      console.log("set -----");
+      numSet = new Set();
+      for (i = 0; i < 5; i++) {
+        numSet.add(i);
+      }
+      for (i = 0; i < 5; i++) {
+        console.log(numSet.has(i));
+      }
+
+      console.log("object -----");
+      myObject = { name: "haci", age: 21, dept: "cs" };
+      for (temp in myObject) {
+        console.log("temp = " + temp);
+      }
+
+      // 3. The way the next item is accessed
+      console.log("3. The way the next item is accessed");
+      number3 = 0;
+      console.log("while----");
+      while (number3 < 10) {
+        console.log("number3 = " + number3);
+        number3 = number3 + 2;
+      }
+      console.log("for----");
+      for (i = 0; i < 10; i++) {
+        console.log("i = " + i);
+        i++;
+      }
+    </script>
+  </body>
+</html>

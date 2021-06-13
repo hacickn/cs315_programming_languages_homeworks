@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1 style="font-size: 2.6rem">CS315</h1>
+    <h2 style="font-size: 2.1rem">Hw1</h2>
+    <h3 style="font-size: 1.7rem">Boolean Expressions</h3>
+
+    <p id="results"></p>
+    <p id="subheading"></p>
+    <script>
+      /*
+          1. Boolean operators provided &&,||,!
+        
+          2.  Data types for operands of boolean operators[  &&,||,!]
+      */
+      console.log("1. Boolean operators provided &&,||,! \n");
+      console.log(
+        "2. Data types for operands of boolean operators [ &&,||,!] \n"
+      );
+
+      // Variables for tests
+      var bool1 = true;
+      var bool2 = true;
+      var bool3 = false;
+      var bool4 = false;
+      var string1 = "haci";
+      var string2 = "ilke";
+      var num1 = 0;
+      var num2 = 2;
+      var num3 = 1;
+
+      console.log("true and true => " + bool1 && bool2);
+      console.log("true and false => " + bool2 && bool4);
+
+      console.log("true or true => " + bool1 || bool2);
+      console.log("true or not false => " + bool2 || !bool4);
+
+      console.log("haci and ilke => " + (string1 && string2));
+      console.log("haci or ilke => " + (string1 || string2));
+      console.log("haci or not ilke => " + (string1 || !string2));
+
+      console.log("0 => " + !!num1);
+      console.log("1 => " + !!num3);
+      console.log("1 and 2 => " + (num3 && num2));
+      console.log("0 or not 2 => " + (num1 || !num2));
+      console.log("0 or 2 => " + (num1 || num2));
+      console.log("\n");
+      console.log("\n");
+      /*
+          3.Operator precedence rules
+            Precedence Rank
+            1:   ()
+            2:   !
+            3:   &&
+            4:   ||
+      */
+      console.log("3. Operator precedence rules \n");
+      console.log("True and True or False = " + !!(true & true || false));
+      console.log("True or True and False = " + !!(true || true & false));
+      console.log("False or True and False = " + !!(false || true & false));
+      console.log("False or True and False = " + !!(false || true & false));
+      console.log(
+        "True and True and (True or True) and False = " +
+          !!(true & true & (true || true) & false)
+      );
+      console.log(
+        "True and True and not (True or True) and False = " +
+          !!(true & true & !(true || true) & false)
+      );
+      console.log(
+        "True and True and True or True and False = " +
+          !!(true & true & true || true & false)
+      );
+      console.log(
+        "True and not True and True or True and False = " +
+          !!(true & !true & true || true & false)
+      );
+      console.log("\n");
+      console.log("\n");
+      /*
+          4. Operator associativity rules
+            1:   AND           left associativity
+            2:   OR            left associativity
+            3:   ()            non associative
+      */
+      console.log("4. Operator associativity rules");
+
+      console.log(
+        "True and False or True and False => " + !!(true && false) ||
+          (true && false)
+      );
+      console.log(
+        "!(False or True and True and false) or (True and False) => " +
+          (!(false || (true && true && false)) || (true && false))
+      );
+      console.log("True == True == False => " + !!((true == true) == false));
+      console.log("True != True != False => " + !!((true != true) != false));
+      console.log("\n");
+      console.log("\n");
+
+      /*
+          5. Operand evaluation order
+          LEFT -> RIGHT in js
+      */
+      console.log("5. Operand evaluation order");
+
+      function myfunction1() {
+        boolTemp = false;
+        console.log("1st function");
+        return boolTemp;
+      }
+      function myfunction2() {
+        boolTemp = true;
+        console.log("2nd function");
+        return boolTemp;
+      }
+
+      function myfunction3() {
+        boolTemp = false;
+        console.log("3rd function");
+        return boolTemp;
+      }
+
+      console.log("myfunction1() and myfunction2() and myfunction3() = ");
+      console.log(myfunction1() && myfunction2() && myfunction3());
+      console.log("myfunction1() or myfunction2() or myfunction3() = ");
+      console.log(myfunction1() || myfunction2() || myfunction3());
+      console.log("myfunction1() == myfunction2() == myfunction3() = ");
+      console.log((myfunction1() == myfunction2()) == myfunction3());
+      console.log("myfunction1() != myfunction2() != myfunction3() = ");
+      console.log((myfunction1() != myfunction2()) != myfunction3());
+      console.log("\n");
+      console.log("\n");
+      /*
+          6. Short-circuit evaluation
+      */
+      console.log("These examples show that javascript has short circuit");
+      console.log(
+        "For and, if javascript face with false operand, javascript do not check rest of the expression"
+      );
+      console.log(
+        "For or, if javascript face with true operand, javascript do not check rest of the expression"
+      );
+      console.log("6. Short-circuit evaluation");
+      console.log("myfunction1() and myfunction2() and myfunction3() = ");
+      console.log(myfunction1() && myfunction2() && myfunction3());
+      console.log("myfunction1() or myfunction2() or myfunction3() = ");
+      console.log(myfunction1() || myfunction2() || myfunction3());
+      console.log("myfunction1() == myfunction2() == myfunction3() = ");
+      console.log((myfunction1() == myfunction2()) == myfunction3());
+      console.log("myfunction1() != myfunction2() != myfunction3() = ");
+      console.log((myfunction1() != myfunction2()) != myfunction3());
+    </script>
+  </body>
+</html>
